@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Servicios de Internet</title>
+    <!-- Vincular Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Vincular archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Sistema de Gestión de Servicios de Internet</h1>
+
+        <!-- Menú -->
+        <div id="menu">
+            <h3>Menú de opciones:</h3>
+            <button class="btn btn-primary mb-2" onclick="registerService()">1. Registrar cliente servicio de Internet</button>
+            <button class="btn btn-secondary mb-2" onclick="consultService()">2. Consultar servicio contratado</button>
+            <button class="btn btn-warning mb-2" onclick="updatePrice()">3. Actualizar precio mensual de internet</button>
+            <button class="btn btn-info mb-2" onclick="changePlan()">4. Cambiar tipo de plan de internet</button>
+            <button class="btn btn-success mb-2" onclick="calculateCost()">5. Calcular costo total</button>
+        </div>
+
+        <!-- Sección para mostrar los detalles del servicio -->
+        <div id="service-details" class="mt-4" style="display:none;">
+            <h3>Detalles del Servicio Registrado</h3>
+            <pre id="service-info"></pre>
+        </div>
+
+        <!-- Sección para calcular el costo -->
+        <div id="cost-section" class="mt-4" style="display:none;">
+            <h3>Cálculo de Costo Total</h3>
+            <label for="months">Nº de Meses:</label>
+            <input type="number" id="months" class="form-control w-25 mb-2" placeholder="Ej. 6" min="1">
+            <button class="btn btn-success" onclick="showTotalCost()">Calcular</button>
+            <p id="total-cost"></p>
+        </div>
+
+        <!-- Mensajes de error -->
+        <div id="error-message" class="text-danger mt-3" style="display:none;"></div>
+    </div>
+
+    <!-- Vincular archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
